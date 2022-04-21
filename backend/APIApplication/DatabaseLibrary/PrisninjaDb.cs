@@ -35,7 +35,7 @@ public class PrisninjaDb : IDbRequest, IDbSearch, IDbInsert
             .Where(s =>
                 (Math.Sqrt(
                     Math.Pow(Math.Abs(s.Location_X - x), 2) +
-                    Math.Pow(Math.Abs(s.Location_Y - y), 2)) < range))
+                    Math.Pow(Math.Abs(s.Location_Y - y), 2)) <= range))
             .Select(s => s.ID)
             .ToList();
     }

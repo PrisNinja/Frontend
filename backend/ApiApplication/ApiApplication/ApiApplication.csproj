@@ -19,6 +19,7 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+        <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0-preview.2.22152.2" />
         <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
         <PackageReference Include="Z.EntityFramework.Extensions.EFCore" Version="7.0.0-preview.2.22153.1-02" />
     </ItemGroup>
