@@ -8,24 +8,16 @@ public class PrisninjaDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer("" +
-                                    "Server=tcp:prj4server.database.windows.net,1433;" +
-                                    "Initial Catalog=PRJ4 Database;" +
+                                    "Server=tcp:prisninjadb.database.windows.net,1433;" +
+                                    "Initial Catalog=PrisninjaWebApiDb;" +
                                     "Persist Security Info=False;" +
-                                    "User ID=superadmin;" +
-                                    "Password=Superpassword1;" +
+                                    "User ID=PrisninjaDb;" +
+                                    "Password=PRJ4Server;" +
                                     "MultipleActiveResultSets=False;" +
                                     "Encrypt=True;" +
                                     "TrustServerCertificate=False;" +
                                     "Connection Timeout=30;"
         );
-
-        // optionsBuilder.UseSqlServer("" +
-        //                             "Data Source=" + ";" +
-        //                             "Database=TestDB;" +
-        //                             "TrustServerCertificate=true;" +
-        //                             "User ID=SA;" +
-        //                             "PASSWORD=<Tofirebananer147>"
-        // );
     }
 
     public DbSet<Store> Stores => Set<Store>();
