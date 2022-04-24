@@ -4,8 +4,14 @@ namespace ExternalApiLibrary.Callers.Coop;
 
 public class CoopStoreCaller : ICaller
 {
+<<<<<<< HEAD:backend/APIApplication/ExternalApiLibrary/Callers/Coop/CoopStoreCaller.cs
     private static readonly List<string> StoresToRetrieve =
         new() { "Kvickly", "SuperBrugsen", "DagliBrugsen", "Irma", "Fakta", "Coop365" };
+=======
+    public static readonly List<string> StoresToRetrieve = 
+        new() {"Kvickly", "SuperBrugsen", "DagliBrugsen", "Irma", "Fakta", "Coop365"};
+    
+>>>>>>> Add Coop caller tests:backend/APIApplication/ExternalApiLibrary/ExternalAPIComponent/Callers/Coop/CoopStoreCaller.cs
     private static readonly string BaseUrl = "https://info.coop.dk/umbraco/surface/Chains/GetAllStores";
     private IRequest _request;
     

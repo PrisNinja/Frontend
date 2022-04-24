@@ -4,15 +4,21 @@ namespace ExternalApiLibrary.Callers.Coop;
 
 public class CoopRequestBuilder : IRequestBuilder
 {
+<<<<<<< HEAD:backend/APIApplication/ExternalApiLibrary/Callers/Coop/CoopRequestBuilder.cs
     private readonly string _baseUrl = "https://mad.coop.dk/api/search/products";
 
     /**
+=======
+	private const string BaseUrl = "https://mad.coop.dk/api/search/products";
+
+	/**
+>>>>>>> Add Coop caller tests:backend/ApiApplication/ExternalApiLibrary/ExternalAPIComponent/Callers/Coop/CoopRequestBuilder.cs
      * Builds a CoopRequest
      * 
      * Coop does not use any API-keys or app-ids, nor do they support any parameters.
      */
     public IRequest Build()
     {
-        return new CoopRequest(_baseUrl);
+        return new CoopRequest(BaseUrl);
     }
 }
