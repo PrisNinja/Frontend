@@ -6,7 +6,7 @@ public class ProductNameStandardizer
 {
     public List<ProductStandardName> Standardize(List<Product> products)
     {
-        var pList = Filter(products);
+        var pList = FilterProductNames(products);
         
         var standardList = new List<ProductStandardName>();
         pList.ForEach(p =>
@@ -31,7 +31,7 @@ public class ProductNameStandardizer
         return standardList;
     }
 
-    private List<Product> Filter(List<Product> products)
+    private List<Product> FilterProductNames(List<Product> products)
     {
         var pList = products;
         pList.ForEach(p =>
