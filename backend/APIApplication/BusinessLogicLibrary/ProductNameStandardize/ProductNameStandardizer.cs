@@ -2,14 +2,14 @@
 
 namespace BusinessLogicLibrary.ProductNameStandardize;
 
-public class ProductNameStandardizer
+public class ProductNameStandardizer : IProductNameStandardizer
 {
     public List<ProductStandardName> Standardize(List<Product> products)
     {
-        var pList = FilterProductNames(products);
+        var productList = FilterProductNames(products);
         
         var standardList = new List<ProductStandardName>();
-        pList.ForEach(p =>
+        productList.ForEach(p =>
         {
             var oldPsn = FindSimilarProductStandardName(standardList, p);
             var psn = new ProductStandardName
