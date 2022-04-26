@@ -11,6 +11,7 @@ public class ProductNameStandardizer
         var standardList = new List<ProductStandardName>();
         pList.ForEach(p =>
         {
+            var oldPsn = FindSimilarProductStandardName(standardList, p);
             var psn = new ProductStandardName
             {
                 Name = p.Name,
@@ -19,8 +20,6 @@ public class ProductNameStandardizer
                 MeasureStk = (p.Measurement.ToLower().Contains("stk") ? true : false),
                 Organic = p.Organic
             };
-            var oldPsn = FindSimilarProductStandardName(standardList, psn, p);
-
             psn.MeasureG |= oldPsn.MeasureG;
             psn.MeasureL |= oldPsn.MeasureL;
             psn.MeasureStk |= oldPsn.MeasureStk;
@@ -50,10 +49,7 @@ public class ProductNameStandardizer
         return pList;
     }
 
-    private ProductStandardName FindSimilarProductStandardName(
-        List<ProductStandardName> standardList, 
-        ProductStandardName psn, 
-        Product p)
+    private ProductStandardName FindSimilarProductStandardName(List<ProductStandardName> standardList, Product p)
     {
         if (standardList.Any(sn => sn.Name == p.Name))
         {
@@ -66,7 +62,7 @@ public class ProductNameStandardizer
         else if (standardList.Any(sn => (" " + p.Name + " ").Contains(" " + sn.Name + " ")))
         {
             var oldPsn = standardList.Find(sn => (" " + p.Name + " ").Contains(" " + sn.Name + " "));
-            psn.Name = oldPsn.Name;
+            p.Name = oldPsn.Name;
             return oldPsn;
         }
         else
