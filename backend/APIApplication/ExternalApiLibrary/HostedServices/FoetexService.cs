@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices.ComTypes;
 using ApiApplication.Database;
 using ApiApplication.Database.Models;
-using ApiApplication.Database.ProductNameStandardize;
+using BusinessLogicLibrary.ProductNameStandardize;
 using ExternalAPIComponent;
 using ExternalAPIComponent.Callers.Interfaces;
 using ExternalApiLibrary.ExternalAPIComponent.Callers.Salling;
