@@ -27,12 +27,17 @@ public class CoopRequest : IRequest
         _pageSize = pageSize;
     }
 <<<<<<< HEAD:backend/APIApplication/ExternalApiLibrary/Callers/Coop/CoopRequest.cs
+<<<<<<< HEAD:backend/APIApplication/ExternalApiLibrary/Callers/Coop/CoopRequest.cs
 
     public async Task<object> CallPage()
 =======
     
     private async Task<object> CallPage()
 >>>>>>> Add Coop caller tests:backend/ApiApplication/ExternalApiLibrary/ExternalAPIComponent/Callers/Coop/CoopRequest.cs
+=======
+    
+    private async Task<object> CallPage()
+>>>>>>> 34df9d203558b45bbdde9a9a049418fc8e111c21:backend/ApiApplication/ExternalApiLibrary/ExternalAPIComponent/Callers/Coop/CoopRequest.cs
     {
         var client = new HttpClient();
         
