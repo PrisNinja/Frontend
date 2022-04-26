@@ -15,11 +15,15 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<PrisninjaDbContext>(options =>
 {
     options.UseSqlServer("" +
-                         "Data Source=localhost;" +
-                         "Database=TestDB;" +
-                         "TrustServerCertificate=true;" +
-                         "User ID=SA;" +
-                         "PASSWORD=<Tofirebananer147>");
+                                "Server=tcp:prisninjadb.database.windows.net,1433;" + 
+                                "Initial Catalog=PrisninjaWebApiDb;" + 
+                                "Persist Security Info=False;" + 
+                                "User ID=PrisninjaDb;" + 
+                                "Password=PRJ4Server;" + 
+                                "MultipleActiveResultSets=False;" + 
+                                "Encrypt=True;" +
+                                "TrustServerCertificate=False;" + 
+                                "Connection Timeout=30;");
 });
 builder.Services.AddTransient<IDbRequest, PrisninjaDb>();
 builder.Services.AddTransient<IDbSearch, PrisninjaDb>();

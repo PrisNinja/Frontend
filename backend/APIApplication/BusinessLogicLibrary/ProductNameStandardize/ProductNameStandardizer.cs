@@ -59,13 +59,13 @@ public class ProductNameStandardizer
         {
             return standardList.Find(sn => sn.Name == p.Name);
         }
-        else if (standardList.Any(sn => sn.Name.Contains(p.Name + " ")))
+        else if (standardList.Any(sn => (" " + sn.Name + " ").Contains(" " + p.Name + " ")))
         {
-            return standardList.Find(sn => sn.Name.Contains(p.Name + " "));
+            return standardList.Find(sn => (" " + sn.Name + " ").Contains(" " + p.Name + " "));
         }
-        else if (standardList.Any(sn => p.Name.Contains(sn.Name + " ")))
+        else if (standardList.Any(sn => (" " + p.Name + " ").Contains(" " + sn.Name + " ")))
         {
-            var oldPsn = standardList.Find(sn => p.Name.Contains(sn.Name + " "));
+            var oldPsn = standardList.Find(sn => (" " + p.Name + " ").Contains(" " + sn.Name + " "));
             psn.Name = oldPsn.Name;
             return oldPsn;
         }
